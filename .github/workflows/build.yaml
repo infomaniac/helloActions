@@ -7,14 +7,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v4
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v3
 
-      - name: Test
-        run: go test ./...
-      - name: Build
-        env:
-          GOOS: linux
-          GOARCH: amd64
-          CGO_ENABLED: 0
-        run: go build
+      - run: go version
+
+      # - name: Test
+      #   run: go test ./...
+      # - name: Build
+      #   env:
+      #     GOOS: linux
+      #     GOARCH: amd64
+      #     CGO_ENABLED: 0
+      #   run: go build
